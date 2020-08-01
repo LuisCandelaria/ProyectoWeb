@@ -1,0 +1,97 @@
+<%- include ("./partials/_header") %>
+
+    <section>
+        <main class="container1">
+
+            <div style="margin-top: 3%;" class="flex4">
+
+                <div class="flex3">
+                    <label for="name"> Folio:</label>
+                    <label for="name"> Fecha:</label>
+                    <label for="name"> #Doc Prov:</label>
+
+                </div>
+
+                <div class="flex3">
+                    <input type="text" class="separar">
+                    <input type="text" class="separar">
+                    <input type="text" class="separar">
+                </div>
+
+                <div class="flex3">
+
+                    <label for="name"> # OC:</label>
+                    <label for="name"> # Entrada:</label>
+
+                </div>
+
+                <div class="flex3">
+                    <input type="text" class="separar">
+                    <input type="text" class="separar">
+                </div>
+            </div>
+
+            <div class="flex4">
+                <div class="flex3">
+                    <label for="name"> Proveedor:</label>
+
+                </div>
+
+
+                <div class="flex3">
+                    <select name="proveedor" id="proveedor">
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div style="margin-top: 3%;" class="flex4">
+
+                    <div class="flex3">
+                        <label for="name"> Cantidad:</label>
+
+                        <label for="name"> Inspección:</label>
+
+
+
+                    </div>
+
+
+
+                    <div class="flex3">
+
+                        <input type="number" class="separar">
+
+                        <select name="inspeccion" id="inspeccion">
+                            <option value="Aceptado">Aceptado</option>
+                            <option value="Rechazado">Rechazado</option>
+                          </select>
+
+                    </div>
+
+                    <div class="flex3">
+
+                        <label for="name" style="margin-bottom: 3%;"> Unidad:</label>
+
+                    </div>
+
+                    <div class="flex3">
+                        <select name="unidad" id="unidad">
+                            <option value="Kg">Kg</option>
+                            <option value="Piezas">Piezas</option>
+                            <option value="Juegos">Juegos</option>
+                            <option value="m2">m2</option>
+                            <option value="m">m</option>
+                            <option value="Corrugado">Corrugado</option>
+                          </select>
+
+                    </div>
+                </div>
+
+        </main>
+    </section>
+
+    <%- include ("./partials/_footer") %>

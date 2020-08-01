@@ -24,8 +24,11 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 
+
+
 //routes
 app.use('/', indexRoutes);
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(app.get('port'), () => {
     console.log(`server on port ${app.get('port')}`);

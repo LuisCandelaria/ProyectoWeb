@@ -1,0 +1,114 @@
+body {
+    background-color: grey;
+}
+
+.title {
+    font-size: 70px;
+    margin-left: 40px;
+    margin-top: 20px;
+    color: #291576;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.subtitle {
+    font-size: 30px;
+    margin-top: 8%;
+    display: flex;
+    color: #291576;
+    justify-content: center;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.flex2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.flex3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: end;
+    margin-bottom: 3%;
+    margin-right: 1%;
+}
+
+.flex4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-bottom: 3%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.myButton {
+    box-shadow: 0px 0px 0px 2px #9fb4f2;
+    background: linear-gradient(to bottom, #292573 5%, #476e9e 100%);
+    background-color: #291576;
+    border-radius: 10px;
+    border: 1px solid #291576;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    text-align: center;
+    width: 300px;
+    font-size: 19px;
+    padding: 12px 37px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #291576;
+}
+
+.myButton:hover {
+    background: linear-gradient(to bottom, #291576 5%, #291576 100%);
+    background-color: #291576;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
+
+.complete {
+    display: flex;
+    flex: 1;
+    color: #dddddd;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+}
+
+.separar {
+    margin-left: 1%;
+}
+
+label {
+    margin-top: 3%;
+}
+
+input {
+    margin-top: 2%;
+}
+
+select {
+    margin-top: 2%;
+}
