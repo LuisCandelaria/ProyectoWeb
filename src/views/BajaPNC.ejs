@@ -1,0 +1,128 @@
+<%- include ("./partials/_header") %>
+
+    <!-- FORMULARIO-->
+
+    <div class="flex">
+
+
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header">
+                    <form action="/add" method="post">
+                        <div class="flex4">
+                            <div class="form-group">
+                                <select class="form-control" name="Folio" placeholder="Folio" style="width: fit-content;">
+                                <option value="" disabled selected hidden>Folio</option>
+                            </select>
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="Fecha" placeholder="Fecha" style="width: fit-content; margin-left: 10%;" disabled>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="Orden" placeholder="Orden" style="width: fit-content; " disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="ProcesoDefecto" placeholder="Proceso donde ocurrió el defecto" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="Modelo" placeholder="Modelo" disabled>
+                        </div>
+
+
+
+
+                        <div class="flex5">
+
+                            <label for="name"> Defectos seleccionados:</label >
+                        </div>
+                        <div class="flex4">
+
+                           
+                        <div class="form-group">
+                            <textarea class="form-control" name="Comentarios" cols="80" disabled></textarea>
+                        </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="Cantidad"  placeholder="Cantidad" style="width: fit-content; " disabled>
+                        </div>
+
+
+
+
+                        <div class="form-group">
+                            <textarea class="form-control" name="Comentarios" cols="80" placeholder="Comentarios" disabled></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="Retrabajable"  placeholder="Retrabajable" style="width: fit-content; " disabled>
+                        </div>
+                        <hr class="my-4">
+
+                           <div class="flex6">
+                            <label for="name" > Fecha de Retrabajo:</label >
+
+                            <div class="form-group">
+                                <input class="form-control" type="date" name="Fecha" placeholder="Fecha" style="width: fit-content;">
+                            </div>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="RetrabajadoPersona"  placeholder="Retrabajado Por" >
+                        </div>
+
+                    <div class="flex4">
+
+
+                        <div class="form-group">
+                            <select class="form-control" name="Retrabajable" placeholder="Retrabajable" style="width: fit-content;">
+                            <option value="" disabled selected hidden>Tipo</option>
+                            <option value="Retrabajo">Costo de Retrabajo</option>
+                            <option value="Scrap">Costo de Scrap</option>
+                        </select>
+                        </div>
+
+
+
+
+
+                        <div class="form-group">
+                            <input class="form-control" type="number" name="Costo" placeholder="Costo" style="width: fit-content; margin-left: 10%;">
+                        </div>
+
+
+                    </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="Comentarios" cols="80" placeholder="Comentarios"></textarea>
+                        </div>
+                        
+
+
+                       
+                       
+                        <div class="flex4">
+                            <button class="btn btn-primary" type="submit">
+                                    Enviar
+                            </button>
+
+                            <button class="btn btn-primary" type="submit" href="/" style="margin-left: 10%;">
+                                Salir
+                         </button>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <%- include ("./partials/_footer") %>

@@ -23,6 +23,18 @@ router.get('/inspeccionFinal/', (req, res) => {
     res.render('InspeccionFinal');
 });
 
+router.get('/altaPNC/', (req, res) => {
+    //   const tasks = await Task.find();
+    res.render('AltaPNC');
+});
+
+router.get('/bajaPNC/', (req, res) => {
+    //   const tasks = await Task.find();
+    res.render('BajaPNC');
+});
+
+
+
 
 // Ruta que nos permita agregar nuevas tareas que vienen desde un metodo post
 router.post('/add', async(req, res) => {
