@@ -1,0 +1,295 @@
+<%- include ("./partials/_header") %>
+
+
+
+    <!-- FORMULARIO-->
+
+    <div class="flex">
+
+
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="post">
+                        <div class="flex4">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="Folio" placeholder="Folio" style="width: fit-content;">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="date" name="Fecha" placeholder="Fecha" style="width: fit-content; margin-left: 10%;">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <select class="form-control" name="Producto" placeholder="Producto">
+                            <option value="" disabled selected hidden>Nombre del Producto</option>
+                        </select>
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" type="number" name="Lote" placeholder="Tamaño de Lote" style="width: fit-content;">
+                        </div>
+                        <hr class="my-4">
+                        <nav class="navbar navbar-light bg-light">
+                            1.- Producto
+                        </nav>
+
+                        <table class="table table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+
+                                    <th scope="col">Defectos</th>
+                                    <th scope="col">Inspección</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Dimensiones Finales</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Limpieza del Producto</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Función de puertas y cajones</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Color de Melamina</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Orientación de Vetas</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Color de Cintilla</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Espesor de Cintilla</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Colocación de Cintilla</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Descuadre</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Marcas de Pegamento</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Despostilles</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Rayaduras</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Retoques</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Pruebas de Resistencia</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Herrajes instalados correctos (bumpers, bisagras, manija, push, y colgadores)</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Etiquetas de producto</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Prueba de colgado*</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Resane de perforación interna*</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Cubierta correcta*</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+
+
+
+                            </tbody>
+                        </table>
+                        <hr class="my-4">
+                        <nav class="navbar navbar-light bg-light">
+                            2.- Empaque
+                        </nav>
+                        <table class="table table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+
+                                    <th scope="col">Defectos</th>
+                                    <th scope="col">Inspección</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Caja</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Etiquetas de caja</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Herrajes en bolsa y componentes sueltos correctos</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Manual de instrucciones y garantía</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Color de Marmol*</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Ovalin*</td>
+                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <option value="OK">OK</option>
+                                        <option value="Menor">Menor</option>
+                                        <option value="Mayor">Mayor</option>
+                                    </select></td>
+                                </tr>
+
+
+
+
+                            </tbody>
+                        </table>
+
+                        <div class="form-group">
+                            <textarea class="form-control" name="resumen" cols="80" placeholder="Resumen"></textarea>
+                        </div>
+
+                        <div class="flex4">
+                            <button class="btn btn-primary" type="submit">
+                                    Enviar
+                            </button>
+
+                            <button class="btn btn-primary" type="submit" href="/" style="margin-left: 10%;">
+                                Salir
+                         </button>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <%- include ("./partials/_footer") %>

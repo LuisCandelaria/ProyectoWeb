@@ -13,6 +13,17 @@ router.get('/recepcion/', (req, res) => {
     res.render('Recepcion');
 });
 
+router.get('/defectosProceso/', (req, res) => {
+    //   const tasks = await Task.find();
+    res.render('DefectosEnProceso');
+});
+
+router.get('/inspeccionFinal/', (req, res) => {
+    //   const tasks = await Task.find();
+    res.render('InspeccionFinal');
+});
+
+
 // Ruta que nos permita agregar nuevas tareas que vienen desde un metodo post
 router.post('/add', async(req, res) => {
     const task = new Task(req.body);
