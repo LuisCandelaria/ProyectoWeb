@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const provedorSchema = Schema({
+const provedoresSchema = Schema({
 
-    name: String
+    nombre: String
 
 });
 
-module.exports = mongoose.model('provedor', provedorSchema);
+module.exports = mongoose.model('provedores', provedoresSchema);

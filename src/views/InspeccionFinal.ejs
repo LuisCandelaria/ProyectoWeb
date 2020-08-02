@@ -23,6 +23,11 @@
                         <div class="form-group">
                             <select class="form-control" name="Producto" placeholder="Producto">
                             <option value="" disabled selected hidden>Nombre del Producto</option>
+                            <% for (var i =0; i < prod.length; i++)  {     %>
+
+                                <option value="">  <%= prod[i].nombre %> </option>
+
+                                <%  }  %>
                         </select>
                         </div>
 
@@ -301,9 +306,9 @@
                                     Enviar
                             </button>
 
-                            <button class="btn btn-primary" type="submit" href="/" style="margin-left: 10%;">
+                            <a class="btn btn-primary" type="submit" href="/inicio" style="margin-left: 10%;">
                                 Salir
-                         </button>
+                         </a>
 
                         </div>
 

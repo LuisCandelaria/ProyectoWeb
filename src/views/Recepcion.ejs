@@ -37,10 +37,10 @@
 
                         <div class="form-group">
                             <select class="form-control" name="Proveedor" placeholder="Proveedor">
-                            <option value="" disabled selected hidden>Provedor</option>
-                            <% for (var i =0; i < provedor.length; i++)  {     %>
+                            <option value="" disabled selected hidden>Proveedor</option>
+                            <% for (var i =0; i < prov.length; i++)  {     %>
 
-                                <option value=""> <% provedor[i]%> </option>
+                                <option value="">  <%= prov[i].nombre %> </option>
 
                                 <%  }  %>
                         </select>
@@ -48,6 +48,11 @@
                         <div class="form-group">
                             <select class="form-control" name="Material" placeholder="Material">
                             <option value="" disabled selected hidden>Material</option>
+                            <% for (var i =0; i < mat.length; i++)  {     %>
+
+                                <option value="">  <%= mat[i].name %> </option>
+
+                                <%  }  %>
                         </select>
                         </div>
 
@@ -81,9 +86,9 @@
                                     Enviar
                             </button>
 
-                                <button class="btn btn-primary" type="submit" href="/" style="margin-left: 10%;">
+                                <a class="btn btn-primary" type="submit" href="/inicio" style="margin-left: 10%;">
                                 Salir
-                         </button>
+                         </a>
                             </div>
                     </form>
                     </div>

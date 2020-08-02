@@ -1,8 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const Task = require('../model/task');
-const provedor = require('../model/provedor')
+const provedor = require('../model/provedor');
 const usuarios = require('../model/usuarios');
+const materiales = require('../model/materiales');
+const departamentos = require('../model/departamentos');
+const operaciones = require('../model/operaciones');
+const productos = require('../model/productos');
+const defectos = require('../model/defectos');
 const { Mongoose } = require('mongoose');
 
 // Nos regresaria las tareas guardadas en la BD
@@ -12,16 +17,23 @@ router.get('/', (req, res) => {
 router.get('/inicio/', (req, res) => {
     res.render('Inicio');
 });
-router.get('/recepcion/', (req, res) => {;
-    res.render('Recepcion', { provedor });
+router.get('/recepcion/', async(req, res) => {;
+    const prov = await provedor.find();
+    const mat = await materiales.find();
+    res.render('Recepcion', { prov, mat });
 });
 
-router.get('/defectosProceso/', (req, res) => {
-    res.render('DefectosEnProceso');
+router.get('/defectosProceso/', async(req, res) => {
+    const dep = await departamentos.find();
+    const ope = await operaciones.find();
+    const prod = await productos.find();
+    const def = await defectos.find();
+    res.render('DefectosEnProceso', { dep, ope, prod, def });
 });
 
-router.get('/inspeccionFinal/', (req, res) => {
-    res.render('InspeccionFinal');
+router.get('/inspeccionFinal/', async(req, res) => {
+    const prod = await productos.find();
+    res.render('InspeccionFinal', { prod });
 });
 
 router.get('/altaPNC/', (req, res) => {
