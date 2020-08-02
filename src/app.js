@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // connection to  db
-mongoose.connect('mongodb://localhost/crud-mongo')
+mongoose.connect('mongodb://localhost/db-fimsa')
     .then(db => console.log('db connected'))
     .catch(err => console.log(err));
 
@@ -23,6 +23,7 @@ app.set('view engine', 'ejs');
 // middlewares
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 
 

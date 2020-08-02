@@ -1,41 +1,75 @@
 const express = require('express');
 const router = express.Router();
 const Task = require('../model/task');
+const usuarios = require('../model/usuarios');
+const { Mongoose } = require('mongoose');
 
 // Nos regresaria las tareas guardadas en la BD
 router.get('/', (req, res) => {
-    //   const tasks = await Task.find();
+    res.render('singin');
+});
+router.get('/inicio/', (req, res) => {
     res.render('Inicio');
 });
-
 router.get('/recepcion/', (req, res) => {
-    //   const tasks = await Task.find();
     res.render('Recepcion');
 });
 
 router.get('/defectosProceso/', (req, res) => {
-    //   const tasks = await Task.find();
     res.render('DefectosEnProceso');
 });
 
 router.get('/inspeccionFinal/', (req, res) => {
-    //   const tasks = await Task.find();
     res.render('InspeccionFinal');
 });
 
 router.get('/altaPNC/', (req, res) => {
-    //   const tasks = await Task.find();
     res.render('AltaPNC');
 });
 
 router.get('/bajaPNC/', (req, res) => {
-    //   const tasks = await Task.find();
     res.render('BajaPNC');
 });
 
+//Ruta para registrar
+router.post('/registrar', function(req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
+
+    var newuser = new usuarios();
+
+    newuser.username = username;
+    newuser.password = password;
+
+    newuser.save(function(err, savedUser) {
+        if (err) {
+            console.log(err);
+            return res.status(500).send();
+        }
+        return res.status(200).send();
+    })
+});
 
 
+//Ruta para validar usuarios
+router.post('/singin', function(req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
+    usuarios.findOne({ username: username, password: password }, function(err, user) {
+        if (err) {
+            console.log(err);
+            return res.status(500).send();
+        }
 
+        if (!user) {
+            return res.status(404).send("<script>  window.alert('Usuario Invalido') </script>");
+
+
+        }
+
+        return res.redirect('/inicio/');
+    })
+});
 // Ruta que nos permita agregar nuevas tareas que vienen desde un metodo post
 router.post('/add', async(req, res) => {
     const task = new Task(req.body);
