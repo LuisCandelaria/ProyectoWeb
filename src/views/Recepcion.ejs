@@ -37,7 +37,12 @@
 
                         <div class="form-group">
                             <select class="form-control" name="Proveedor" placeholder="Proveedor">
-                            <option value="" disabled selected hidden>Proveedor</option>
+                            <option value="" disabled selected hidden>Provedor</option>
+                            <% for (var i =0; i < provedor.length; i++)  {     %>
+
+                                <option value=""> <% provedor[i]%> </option>
+
+                                <%  }  %>
                         </select>
                         </div>
                         <div class="form-group">

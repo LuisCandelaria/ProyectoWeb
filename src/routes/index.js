@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Task = require('../model/task');
+const provedor = require('../model/provedor')
 const usuarios = require('../model/usuarios');
 const { Mongoose } = require('mongoose');
 
@@ -11,8 +12,8 @@ router.get('/', (req, res) => {
 router.get('/inicio/', (req, res) => {
     res.render('Inicio');
 });
-router.get('/recepcion/', (req, res) => {
-    res.render('Recepcion');
+router.get('/recepcion/', (req, res) => {;
+    res.render('Recepcion', { provedor });
 });
 
 router.get('/defectosProceso/', (req, res) => {
