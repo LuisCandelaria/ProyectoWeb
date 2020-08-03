@@ -16,7 +16,12 @@ const piezaModelos = require('../model/piezaModelos');
 const altaPNC = require('../model/AltaPnc');
 const inspeccion = require('../model/inspeccion_final');
 const bajaPNC = require('../model/BajaPnc');
+<<<<<<< HEAD
 const def_proceso = require('../model/defecto_proceso');
+=======
+const inspeccionProceso = require('../model/inspeccionProceso');
+
+>>>>>>> 333e8545adc2d305a6dac6c582e649bfd9a61336
 
 
 
@@ -66,6 +71,8 @@ router.get('/agregarPieza/', async(req, res) => {;
     res.render('AgregarPieza', { tasks });
 });
 
+
+
 router.get('/agregarDefectoOperacion/', async(req, res) => {;
     const tasks = await defectoOperaciones.find();
     const mod = await operaciones.find();
@@ -94,8 +101,9 @@ router.get('/inspeccionFinal/', async(req, res) => {
     res.render('InspeccionFinal', { prod });
 });
 
-router.get('/inspeccionProceso/', (req, res) => {
-    res.render('InspeccionProceso');
+router.get('/inspeccionProceso/', async(req, res) => {
+    const ins = await inspeccionProceso.find();
+    res.render('InspeccionProceso', { ins });
 });
 
 router.get('/escuadradora/', (req, res) => {
@@ -226,6 +234,14 @@ router.post('/addAltaPnc', async(req, res) => {
     const defecto = new altaPNC(req.body);
     await defecto.save();
     res.redirect('/inicio/');
+});
+
+router.post('/addInspeccionProceso/:id', async(req, res) => {
+    const defecto = new inspeccionProceso(req.body);
+    var id = req.params.id;
+    await defecto.save();
+    var st = "/escuadradora/" + id;
+    res.redirect(st);
 });
 
 router.post('/addBajaPnc/:id', async(req, res) => {
