@@ -10,19 +10,19 @@
         <div class="col-md-5">
             <div class="card">
                 <div class="card-header">
-                    <form action="/add" method="POST">
+                    <form action="/defProceso/" method="POST">
                         <div class="form-group">
-                            <input class="form-control" type="text" name="Folio" placeholder="Folio" style="width: fit-content;">
+                            <textarea class="form-control" type="text" name="folio" placeholder="Folio" style="width: fit-content;"></textarea>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="date" name="Fecha" placeholder="Fecha" style="width: fit-content;">
+                            <input class="form-control" type="date" name="fecha" placeholder="Fecha" style="width: fit-content;">
                         </div>
                         <div class="form-group">
-                            <select class="form-control" name="Departamento" placeholder="Departamento">
+                            <select class="form-control" name="departamento" placeholder="Departamento">
                             <option value="" disabled selected hidden>Departamento</option>
                             <% for (var i =0; i < dep.length; i++)  {     %>
 
-                                <option value="">  <%= dep[i].nombre %> </option>
+                                <option value="<%= dep[i].nombre %>">  <%= dep[i].nombre %> </option>
 
                                 <%  }  %>
                         </select>
@@ -30,37 +30,37 @@
 
 
                         <div class="form-group">
-                            <select class="form-control" name="Operacion" placeholder="Operacion">
+                            <select class="form-control" name="operacion" placeholder="Operacion">
                             <option value="" disabled selected hidden>Operacion</option>
                             <% for (var i =0; i < ope.length; i++)  {     %>
 
-                                <option value="">  <%= ope[i].nombre %> </option>
+                                <option value="<%= ope[i].nombre %>">  <%= ope[i].nombre %> </option>
 
                                 <%  }  %>
                         </select>
                         </div>
                         <div class="form-group">
-                            <select class="form-control" name="Producto" placeholder="Producto">
+                            <select class="form-control" name="producto" placeholder="Producto">
                             <option value="" disabled selected hidden>Producto</option>
                             <% for (var i =0; i < prod.length; i++)  {     %>
 
-                                <option value="">  <%= prod[i].nombre %> </option>
+                                <option value="<%= prod[i].nombre %>">  <%= prod[i].nombre %> </option>
 
                                 <%  }  %>
                         </select>
                         </div>
                         <div class="form-group">
-                            <select class="form-control" name="Defecto" placeholder="Defecto">
+                            <select class="form-control" name="defecto" placeholder="Defecto">
                             <option value="" disabled selected hidden>Defecto</option>
                             <% for (var i =0; i < def.length; i++)  {     %>
 
-                                <option value="">  <%= def[i].nombre %> </option>
+                                <option value="<%= def[i].nombre %>">  <%= def[i].nombre %> </option>
 
                                 <%  }  %>
                         </select>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="number" name="Cantidad" placeholder="Cantidad" style="width: fit-content;">
+                            <input class="form-control" type="number" name="cantidad" placeholder="Cantidad" style="width: fit-content;">
                         </div>
 
 
