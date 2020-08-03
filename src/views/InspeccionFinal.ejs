@@ -10,29 +10,29 @@
         <div class="col-md-5">
             <div class="card">
                 <div class="card-header">
-                    <form action="/add" method="post">
+                    <form action="/insFinal/" method="post">
                         <div class="flex4">
                             <div class="form-group">
-                                <input class="form-control" type="text" name="Folio" placeholder="Folio" style="width: fit-content;">
+                                <input class="form-control" type="text" name="folio" placeholder="Folio" style="width: fit-content;">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="date" name="Fecha" placeholder="Fecha" style="width: fit-content; margin-left: 10%;">
+                                <input class="form-control" type="date" name="fecha" placeholder="Fecha" style="width: fit-content; margin-left: 10%;">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <select class="form-control" name="Producto" placeholder="Producto">
+                            <select class="form-control" name="producto" placeholder="Producto">
                             <option value="" disabled selected hidden>Nombre del Producto</option>
                             <% for (var i =0; i < prod.length; i++)  {     %>
 
-                                <option value="">  <%= prod[i].nombre %> </option>
+                                <option value="<%= prod[i].nombre %>">  <%= prod[i].nombre %> </option>
 
                                 <%  }  %>
                         </select>
                         </div>
 
                         <div class="form-group">
-                            <input class="form-control" type="number" name="Lote" placeholder="Tamaño de Lote" style="width: fit-content;">
+                            <input class="form-control" type="number" name="lote" placeholder="Tamaño de Lote" style="width: fit-content;">
                         </div>
                         <hr class="my-4">
                         <nav class="navbar navbar-light bg-light">
@@ -51,7 +51,7 @@
                             <tbody>
                                 <tr>
                                     <td>Dimensiones Finales</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="dimensiones_Finales" placeholder="Inspeccion" style="width: fit-content; " tagname="Inspeccion">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -59,7 +59,7 @@
                                 </tr>
                                 <tr>
                                     <td>Limpieza del Producto</td>
-                                    <td class="flex"> <select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"> <select onchange='sum()' class="form-control" name="limpieza" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -67,7 +67,7 @@
                                 </tr>
                                 <tr>
                                     <td>Función de puertas y cajones</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="funcion" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -75,7 +75,7 @@
                                 </tr>
                                 <tr>
                                     <td>Color de Melamina</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="color_Melamina" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -83,7 +83,7 @@
                                 </tr>
                                 <tr>
                                     <td>Orientación de Vetas</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="orientacion" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -91,7 +91,7 @@
                                 </tr>
                                 <tr>
                                     <td>Color de Cintilla</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="color_Cintilla" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -100,7 +100,7 @@
                                 <tr>
                                     <td>Espesor de Cintilla</td>
                                     <td class="flex">
-                                        <select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                        <select onchange='sum()' class="form-control" name="espesor" placeholder="Inspeccion" style="width: fit-content; ">
                                             <option value="OK">OK</option>
                                             <option value="Menor">Menor</option>
                                             <option value="Mayor">Mayor</option>
@@ -109,7 +109,7 @@
                                 </tr>
                                 <tr>
                                     <td>Colocación de Cintilla</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="colocacion" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -117,7 +117,7 @@
                                 </tr>
                                 <tr>
                                     <td>Descuadre</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="descuadre" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -125,7 +125,7 @@
                                 </tr>
                                 <tr>
                                     <td>Marcas de Pegamento</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="marcas" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -133,7 +133,7 @@
                                 </tr>
                                 <tr>
                                     <td>Despostilles</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="despostilles" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -141,7 +141,7 @@
                                 </tr>
                                 <tr>
                                     <td>Rayaduras</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="rayaduras" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -149,7 +149,7 @@
                                 </tr>
                                 <tr>
                                     <td>Retoques</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="retoques" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -157,7 +157,7 @@
                                 </tr>
                                 <tr>
                                     <td>Pruebas de Resistencia</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="pruebas_Resistencia" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -165,7 +165,7 @@
                                 </tr>
                                 <tr>
                                     <td>Herrajes instalados correctos (bumpers, bisagras, manija, push, y colgadores)</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="herrajes_instalados" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -173,7 +173,7 @@
                                 </tr>
                                 <tr>
                                     <td>Etiquetas de producto</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="etiquetas_producto" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -181,7 +181,7 @@
                                 </tr>
                                 <tr>
                                     <td>Prueba de colgado*</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="prueba" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -189,7 +189,7 @@
                                 </tr>
                                 <tr>
                                     <td>Resane de perforación interna*</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="resane" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -197,7 +197,7 @@
                                 </tr>
                                 <tr>
                                     <td>Cubierta correcta*</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="cubierta" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -224,7 +224,7 @@
                             <tbody>
                                 <tr>
                                     <td>Caja</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="caja" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -232,7 +232,7 @@
                                 </tr>
                                 <tr>
                                     <td>Etiquetas de caja</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="etiquetas_caja" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -240,7 +240,7 @@
                                 </tr>
                                 <tr>
                                     <td>Herrajes en bolsa y componentes sueltos correctos</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="herrajes_bolsa" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -248,7 +248,7 @@
                                 </tr>
                                 <tr>
                                     <td>Manual de instrucciones y garantía</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="manual_instrucciones" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -256,7 +256,7 @@
                                 </tr>
                                 <tr>
                                     <td>Color de Marmol*</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="color_Marmol" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -264,7 +264,7 @@
                                 </tr>
                                 <tr>
                                     <td>Ovalin*</td>
-                                    <td class="flex"><select onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select onchange='sum()' class="form-control" name="ovalin" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -283,7 +283,7 @@
 
 
                             <div class="form-group">
-                                <textarea class="form-control" id="res" type="text" name="Aceptado/Rechazado" placeholder="Aceptado" style="height: 40px;" disabled></textarea>
+                                <textarea class="form-control" id="res" type="text" name="estatus" placeholder="Aceptado" style="height: 40px;" readonly></textarea>
                             </div>
                             <div class="flex7" style="margin-left: 10%;">
                                 <div class="form-group" style="margin-top: 7px;">
@@ -291,11 +291,11 @@
 
                                 <div class="form-group">
 
-                                    <textarea id="menor" class="form-control" type="number" name="Menor" style="height: 40px; width: 50px; margin-left: 10%;" disabled></textarea>
+                                    <textarea id="menor" class="form-control" type="number" name="menor" style="height: 40px; width: 50px; margin-left: 10%;" readonly></textarea>
                                 </div>
                                 <div class="form-group">
 
-                                    <textarea id="mayor" class="form-control" type="number" name="Menor" style="height: 40px; width: 50px; margin-left: 10%;" disabled></textarea>
+                                    <textarea id="mayor" class="form-control" type="number" name="mayor" style="height: 40px; width: 50px; margin-left: 10%;" readonly></textarea>
                                 </div>
 
 
@@ -331,7 +331,7 @@
         function sum() {
             var count = 0;
             var count2 = 0;
-            var x = document.getElementsByName("Inspeccion");
+            var x = document.getElementsByTagName("Inspeccion");
 
             for (var i = 0; i < x.length; i++) {
                 if (x[i].value == "Menor") {

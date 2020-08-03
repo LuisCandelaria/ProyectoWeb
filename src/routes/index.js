@@ -236,25 +236,31 @@ router.post('/addBajaPnc/:id', async(req, res) => {
     await defecto.save();
     res.redirect('/inicio/');
 });
-
+router.post('/addFinal', async(req, res) => {
+    const ins = new inspeccion(req.body);
+    await ins.save();
+    res.redirect('/inicio/');
+});
 
 router.post('/addPiezaModelo', async(req, res) => {
-    const defecto = new piezaModelos(req.body);
-    await defecto.save();
+
     res.redirect('/agregarPiezaModelo/');
 });
-// Ruta para editar los datos
+
+router.post('/insFinal/', async(req, res) => {
+        const ins = new inspeccion(req.body);
+        await ins.save();
+        res.redirect('/inicio/');
+
+    })
+    // Ruta para editar los datos
 
 router.get('/edit/:id', async(req, res) => {
     const task = await Task.findById(req.params.id);
     res.render('Ajustes', { task });
 })
 
-router.post('/insFinal/', async(req, res) => {
-    const ins = await inspeccion.find();
-    res.redirect('/inicio/');
 
-})
 
 
 // Ruta para actualizar los datos
