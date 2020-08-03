@@ -22,16 +22,9 @@ const armado1 = require('../model/armado1');
 const armado2 = require('../model/armado2');
 const armado3 = require('../model/armado3');
 const acabados = require('../model/acabados');
-
-
-
 const inspeccion = require('../model/inspeccion_final');
 const bajaPNC = require('../model/BajaPnc');
-
 const def_proceso = require('../model/defecto_proceso');
-const inspeccionProceso = require('../model/inspeccionProceso');
-
-
 const inspeccionProceso = require('../model/inspeccionProceso');
 
 
@@ -375,7 +368,8 @@ router.post('/addAcabados/:id', async(req, res) => {
 
 
 router.post('/addPiezaModelo', async(req, res) => {
-
+    const defecto = new piezaModelos(req.body);
+    await defecto.save();
     res.redirect('/agregarPiezaModelo/');
 });
 
