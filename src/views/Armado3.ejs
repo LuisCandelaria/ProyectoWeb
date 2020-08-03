@@ -1,0 +1,72 @@
+<%- include ("./partials/_header") %>
+
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="/inspeccionProceso">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/escuadradora/">Escuadradora</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/enchapadora/">Enchapadora</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/taladro/">Taladro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/sacabocados/">Sacabocados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="/armado1/">Armado1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/armado2/">Armado2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active " href="/armado3/">Armado3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/acabados/">Acabados</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <div class="flexx">
+
+
+                <div class="form-group">
+                    <select class="form-control" name="Modelo" placeholder="Modelo" style="width: 200px; margin-top: 25px;">
+        <option value="" disabled selected hidden>Modelo</option>
+    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="Pieza" placeholder="Pieza" style="width: 200px; margin-top: 25px;">
+        <option value="" disabled selected hidden>Pieza</option>
+    </select>
+                </div>
+                <div>
+
+
+                    <div class="flex5">
+
+                        <label for="name"> Selecciona los Defectos:</label >
+                </div>
+                <div class="flex">
+
+                    <div class="form-group">
+                        <select class="selectpicker" multiple data-live-search="true" class="form-control" >
+                   
+                        </select>
+                    </div>  </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <!-- FORMULARIO-->
+
+
+    <%- include ("./partials/_footer") %>

@@ -24,6 +24,34 @@ router.get('/inspeccionFinal/', (req, res) => {
     res.render('InspeccionFinal');
 });
 
+router.get('/inspeccionProceso/', (req, res) => {
+    res.render('InspeccionProceso');
+});
+
+router.get('/escuadradora/', (req, res) => {
+    res.render('Escuadradora');
+});
+router.get('/enchapadora/', (req, res) => {
+    res.render('Enchapadora');
+});
+router.get('/taladro/', (req, res) => {
+    res.render('Taladro');
+});
+router.get('/sacabocados/', (req, res) => {
+    res.render('Sacabocados');
+});
+router.get('/armado1/', (req, res) => {
+    res.render('Armado1');
+});
+router.get('/armado2/', (req, res) => {
+    res.render('Armado2');
+});
+router.get('/armado3/', (req, res) => {
+    res.render('Armado3');
+});
+router.get('/acabados/', (req, res) => {
+    res.render('Acabados');
+});
 router.get('/altaPNC/', (req, res) => {
     res.render('AltaPNC');
 });
