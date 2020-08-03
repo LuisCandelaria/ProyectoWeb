@@ -117,7 +117,9 @@ router.get('/acabados/', (req, res) => {
 });
 router.get('/altaPNC/', async(req, res) => {
     const mod = await modelos.find();
-    res.render('AltaPNC', { mod });
+    const def = await defectos.find();
+    const oper = await operaciones.find();
+    res.render('AltaPNC', { mod, def, oper });
 });
 router.get('/ajustes/', (req, res) => {
     res.render('Ajustes');

@@ -26,6 +26,11 @@
                         <div class="form-group">
                             <select class="form-control" name="defecto" placeholder="defecto">
                             <option value="" disabled selected hidden>Proceso donde ocurrió el defecto</option>
+                            <% for (var i =0; i < oper.length; i++)  {     %>
+
+                                <option value="">  <%= oper[i].nombre %> </option>
+
+                                <%  }  %>
                         </select>
                         </div>
 
@@ -47,6 +52,11 @@
 
                             <div class="form-group">
                                 <select class="selectpicker" multiple data-live-search="true" class="form-control" >
+                                    <% for (var i =0; i < def.length; i++)  {     %>
+
+                                        <option value="">  <%= def[i].nombre %> </option>
+        
+                                        <%  }  %>
                            
                                 </select>
                             </div>

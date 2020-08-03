@@ -51,7 +51,7 @@
                             <tbody>
                                 <tr>
                                     <td>Dimensiones Finales</td>
-                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td class="flex"><select id="Dimensiones_Finales" onchange='sum()' class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -59,7 +59,7 @@
                                 </tr>
                                 <tr>
                                     <td>Limpieza del Producto</td>
-                                    <td class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
+                                    <td id="Dimensiones Finales" class="flex"><select class="form-control" name="Inspeccion" placeholder="Inspeccion" style="width: fit-content; ">
                                         <option value="OK">OK</option>
                                         <option value="Menor">Menor</option>
                                         <option value="Mayor">Mayor</option>
@@ -291,7 +291,8 @@
                                     Total: </div>
 
                                 <div class="form-group">
-                                    <input class="form-control" type="number" name="Menor" style="width: 50px; margin-left: 10%;" disabled>
+
+                                    <textarea id="menor" class="form-control" type="number" name="Menor" style="width: 50px; margin-left: 10%;" disabled></textarea>
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" type="number" name="Mayor" style="width: 50px;margin-left: 10%;" disabled>
@@ -313,10 +314,35 @@
                         </div>
 
                     </form>
+                    <p id="menor"></p>
                 </div>
             </div>
         </div>
     </div>
     </div>
+    <script>
+        var count = 0;
+
+
+
+        function sum() {
+            if (document.getElementById("Dimensiones_Finales").value == "Menor") {
+                count = count + 1;
+                document.getElementById("menor").innerHTML = count;
+            }
+            //alert(count);
+        }
+        sum()
+
+        /*
+        $(document).ready(function() {
+            if ($("#Dimensiones_Finales").val() == "OK") {
+                count = 1;
+            }
+            $("#menor").text(count);
+        });
+        var menor = document.getElementById("menor");
+        */
+    </script>
 
     <%- include ("./partials/_footer") %>
