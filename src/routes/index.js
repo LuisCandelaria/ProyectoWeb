@@ -55,6 +55,13 @@ router.get('/acabados/', (req, res) => {
 router.get('/altaPNC/', (req, res) => {
     res.render('AltaPNC');
 });
+router.get('/ajustes/', (req, res) => {
+    res.render('Ajustes');
+});
+router.get('/agregarProveedor/', (req, res) => {
+
+    res.render('AgregarProveedor');
+});
 
 router.get('/bajaPNC/', (req, res) => {
     res.render('BajaPNC');
