@@ -14,10 +14,12 @@ const defectoOperaciones = require('../model/defectoOperaciones');
 const inspeccion_de_rec = require('../model/inspeccion_de_rec');
 const piezaModelos = require('../model/piezaModelos');
 const altaPNC = require('../model/AltaPnc');
+const inspeccion = require('../model/inspeccion_final');
 
 
 
 const { Mongoose } = require('mongoose');
+const { Router } = require('express');
 
 // Nos regresaria las tareas guardadas en la BD
 router.get('/', (req, res) => {
@@ -235,6 +237,12 @@ router.post('/addPiezaModelo', async(req, res) => {
 router.get('/edit/:id', async(req, res) => {
     const task = await Task.findById(req.params.id);
     res.render('Ajustes', { task });
+})
+
+router.post('/insFinal/', async(req, res) => {
+    const ins = await inspeccion.find();
+    res.redirect('/inicio/');
+
 })
 
 
