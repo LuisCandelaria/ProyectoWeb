@@ -11,15 +11,17 @@
                     <form action="/add" method="post">
                         <div class="flex4">
                             <div class="form-group">
-                                <select class="form-control" name="Folio" onchange="location = this.value;" placeholder="Folio" style="width: fit-content;">
-                                <option value="" disabled selected hidden>Folio</option>
-                                <% for (var i =0; i < altpnc.length; i++)  {     %>
+                                <select id="select-state" placeholder="Folio" name="folio" style="width: 150px;" onchange="location = this.value;">
+\                                    <option value="" disabled selected hidden>Folio</option>
 
-                                    <option value="/enviarFolio/<%=altpnc[i].folio %>">  <%= altpnc[i].folio %> </option>
-    
-                                    <%  }  %>
+                                    <% for (var i =0; i < altpnc.length; i++)  {     %>
 
-                            </select>
+                                        <option value="/enviarFolio/<%=altpnc[i].folio %>">  <%= altpnc[i].folio %> </option>
+        
+                                        <%  }  %>
+                                  </select>
+
+
                             </div>
 
                             <div class="form-group">
@@ -51,7 +53,7 @@
 
                            
                         <div class="form-group">
-                            <textarea class="form-control" name="Comentarios" cols="80" disabled></textarea>
+                            <textarea class="form-control" name="Defectos" cols="80" disabled></textarea>
                         </div>
                         </div>
 
@@ -130,5 +132,13 @@
         </div>
     </div>
     </div>
+
+    <script>
+        $(document).ready(function () {
+      $('select').selectize({
+          sortField: 'text'
+      });
+  });
+    </script>
 
     <%- include ("./partials/_footer") %>

@@ -10,7 +10,7 @@ const altaSchema = Schema({
     Defectos: Array,
     Cantidad: Number,
     Comentarios: String,
-    Retrabajo: String,
+    Retrabajo: String
 
 });
 

@@ -14,7 +14,7 @@ const defectoOperaciones = require('../model/defectoOperaciones');
 const inspeccion_de_rec = require('../model/inspeccion_de_rec');
 const piezaModelos = require('../model/piezaModelos');
 const altaPNC = require('../model/AltaPnc');
-
+const bajaPNC = require('../model/BajaPnc');
 
 
 const { Mongoose } = require('mongoose');
@@ -125,7 +125,6 @@ router.get('/altaPNC/', async(req, res) => {
     const defOp = await defectoOperaciones.find();
 
 
-
     res.render('AltaPNC', { mod, def, oper, defOp });
 });
 router.get('/ajustes/', (req, res) => {
@@ -225,6 +224,15 @@ router.post('/addAltaPnc', async(req, res) => {
     res.redirect('/inicio/');
 });
 
+router.post('/addBajaPnc/:id', async(req, res) => {
+    const defecto = new bajaPNC(req.body);
+    var id = req.params.id;
+    await altaPNC.remove({ folio: id });
+    await defecto.save();
+    res.redirect('/inicio/');
+});
+
+
 router.post('/addPiezaModelo', async(req, res) => {
     const defecto = new piezaModelos(req.body);
     await defecto.save();
@@ -299,16 +307,32 @@ router.get('/deletePiezaModelo/:id', async(req, res) => {
     res.redirect('/agregarPiezaModelo/');
 })
 
-
-router.get('/enviarvariable/:id', async(req, res) => {
+router.get('/deleteAltaPnc/:id', async(req, res) => {
     var id = req.params.id;
-    const mod = await modelos.find();
-    const def = await defectos.find();
-    const oper = await operaciones.find();
-    const acabados = await defectoOperaciones.find({ operacion: id });
-    res.render('AltaPNC copy', { acabados, mod, def, oper });
+    await altaPNC.remove({ folio: id });
+    res.redirect('/addBajaPnc');
 })
 
+
+router.get('/enviarvariable/:id', async(req, res) => {
+        var id = req.params.id;
+        const mod = await modelos.find();
+        const def = await defectos.find();
+        const oper = await operaciones.find();
+        const acabados = await defectoOperaciones.find({ operacion: id });
+        res.render('AltaPNC copy', { acabados, mod, def, oper });
+    })
+    /*
+    router.get('/enviarvariable', async(req, res) => {
+        var id2 = req.header.
+        var id = req.params.id;
+        const mod = await modelos.find();
+        const def = await defectos.find();
+        const oper = await operaciones.find();
+        const acabados = await defectoOperaciones.find({ operacion: id });
+        res.render('AltaPNC copy', { acabados, mod, def, oper });
+    })
+    */
 router.get('/enviarFolio/:id', async(req, res) => {
     var id = req.params.id;
     const altpnc2 = await altaPNC.find({ folio: id });
