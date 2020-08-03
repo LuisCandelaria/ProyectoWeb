@@ -32,6 +32,11 @@
                         <div class="form-group">
                             <select class="form-control" name="Modelo" placeholder="Modelo">
                             <option value="" disabled selected hidden>Modelo</option>
+                            <% for (var i =0; i < mod.length; i++)  {     %>
+
+                                <option value="">  <%= mod[i].nombre %> </option>
+
+                                <%  }  %>
                         </select>
                         </div>
                         <div class="flex5">

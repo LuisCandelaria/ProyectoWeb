@@ -36,6 +36,15 @@ body {
     justify-content: center;
 }
 
+.subtitle4 {
+    margin-top: 0.7%;
+    display: flex;
+    font-size: 30px;
+    color: #291576;
+    margin-bottom: 2%;
+    justify-content: center;
+}
+
 .flex {
     display: flex;
     flex-direction: row;
@@ -136,6 +145,24 @@ body {
     text-shadow: 0px 1px 0px #291576;
 }
 
+.myButton3 {
+    box-shadow: 0px 0px 0px 2px #9fb4f2;
+    background: linear-gradient(to bottom, #292573 5%, #476e9e 100%);
+    background-color: #291576;
+    border-radius: 10px;
+    border: 1px solid #291576;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    text-align: center;
+    width: 150px;
+    font-size: 19px;
+    padding: 12px 37px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #291576;
+}
+
 .myButton:hover {
     background: linear-gradient(to bottom, #291576 5%, #291576 100%);
     background-color: #291576;
@@ -152,6 +179,16 @@ body {
 }
 
 .myButton2:active {
+    position: relative;
+    top: 1px;
+}
+
+.myButton3:hover {
+    background: linear-gradient(to bottom, #291576 5%, #291576 100%);
+    background-color: #291576;
+}
+
+.myButton3:active {
     position: relative;
     top: 1px;
 }
