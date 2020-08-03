@@ -25,13 +25,15 @@ const acabados = require('../model/acabados');
 
 
 
-
-
-
 const inspeccion = require('../model/inspeccion_final');
-
 const bajaPNC = require('../model/BajaPnc');
+
+const def_proceso = require('../model/defecto_proceso');
 const inspeccionProceso = require('../model/inspeccionProceso');
+
+
+const inspeccionProceso = require('../model/inspeccionProceso');
+
 
 
 
@@ -378,17 +380,23 @@ router.post('/addPiezaModelo', async(req, res) => {
 });
 
 router.post('/insFinal/', async(req, res) => {
-        const ins = new inspeccion(req.body);
-        await ins.save();
-        res.redirect('/inicio/');
+    const ins = new inspeccion(req.body);
+    await ins.save();
+    res.redirect('/inicio/');
 
-    })
-    // Ruta para editar los datos
+});
+router.post('/defProceso/', async(req, res) => {
+    const def_p = new def_proceso(req.body);
+    await def_p.save();
+    res.redirect('/inicio/');
+
+});
+// Ruta para editar los datos
 
 router.get('/edit/:id', async(req, res) => {
     const task = await Task.findById(req.params.id);
     res.render('Ajustes', { task });
-})
+});
 
 
 
@@ -399,7 +407,7 @@ router.post('/edit/:id', async(req, res) => {
     var id = req.params.id;
     await Task.update({ _id: id }, req.body);
     res.redirect('/');
-})
+});
 
 // Esta ruta permita modificar el estatus de una tarea por medio de su propiedad status.
 router.get('/turn/:id', async(req, res, next) => {
@@ -416,77 +424,76 @@ router.get('/delete/:id', async(req, res) => {
     var id = req.params.id;
     await provedor.remove({ _id: id });
     res.redirect('/agregarProveedor/');
-})
+});
 
 router.get('/deleteDefecto/:id', async(req, res) => {
     var id = req.params.id;
     await defectos.remove({ _id: id });
     res.redirect('/agregarDefecto/');
-})
+});
 
 router.get('/deleteMaterial/:id', async(req, res) => {
     var id = req.params.id;
     await materiales.remove({ _id: id });
     res.redirect('/agregarMaterial/');
-})
+});
 
 router.get('/deleteModelo/:id', async(req, res) => {
     var id = req.params.id;
     await modelos.remove({ _id: id });
     res.redirect('/agregarModelo/');
-})
+});
 
 router.get('/deletePieza/:id', async(req, res) => {
     var id = req.params.id;
     await piezas.remove({ _id: id });
     res.redirect('/agregarPieza/');
-})
+});
 
 router.get('/deleteDefectoOperacion/:id', async(req, res) => {
     var id = req.params.id;
     await defectoOperaciones.remove({ _id: id });
     res.redirect('/agregarDefectoOperacion/');
-})
+});
 
 router.get('/deletePiezaModelo/:id', async(req, res) => {
     var id = req.params.id;
     await piezaModelos.remove({ _id: id });
     res.redirect('/agregarPiezaModelo/');
-})
-
+});
 router.get('/deleteAltaPnc/:id', async(req, res) => {
     var id = req.params.id;
     await altaPNC.remove({ folio: id });
     res.redirect('/addBajaPnc');
-})
+});
 
 
 router.get('/enviarvariable/:id', async(req, res) => {
-        var id = req.params.id;
-        const mod = await modelos.find();
-        const def = await defectos.find();
-        const oper = await operaciones.find();
-        const acabados = await defectoOperaciones.find({ operacion: id });
-        res.render('AltaPNC copy', { acabados, mod, def, oper });
-    })
-    /*
-    router.get('/enviarvariable', async(req, res) => {
-        var id2 = req.header.
-        var id = req.params.id;
-        const mod = await modelos.find();
-        const def = await defectos.find();
-        const oper = await operaciones.find();
-        const acabados = await defectoOperaciones.find({ operacion: id });
-        res.render('AltaPNC copy', { acabados, mod, def, oper });
-    })
-    */
+    var id = req.params.id;
+    const mod = await modelos.find();
+    const def = await defectos.find();
+    const oper = await operaciones.find();
+    const acabados = await defectoOperaciones.find({ operacion: id });
+    res.render('AltaPNC copy', { acabados, mod, def, oper });
+});
+/*
+router.get('/enviarvariable', async(req, res) => {
+    var id2 = req.header.
+    var id = req.params.id;
+    const mod = await modelos.find();
+    const def = await defectos.find();
+    const oper = await operaciones.find();
+    const acabados = await defectoOperaciones.find({ operacion: id });
+    res.render('AltaPNC copy', { acabados, mod, def, oper });
+})
+*/
 router.get('/enviarFolio/:id', async(req, res) => {
     var id = req.params.id;
     const altpnc2 = await altaPNC.find({ folio: id });
     const altpnc = await altaPNC.find();
 
     res.render('BajaPNC copy', { altpnc2, altpnc });
-})
+});
 
 
 module.exports = router;
