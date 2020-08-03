@@ -9,6 +9,17 @@
             <div class="card">
                 <div class="card-header">
                     <form action="/addAltaPnc" method="post">
+
+                        <div class="form-group">
+                            <select id="model" class="form-control" name="Operacion" onchange="location = this.value;">
+                            <option value="<%= acabados[0].operacion %>"  selected > <%= acabados[0].operacion %> </option>
+                            <% for (var i =0; i < oper.length; i++)  {     %>
+
+                                <option value="/enviarvariable/<%=oper[i].nombre %>"  >  <%= oper[i].nombre %> </option>
+
+                                <%  }  %>
+                        </select >
+                        </div>
                         <div class="flex4">
                             <div class="form-group">
                                 <input class="form-control" type="text" name="folio" placeholder="Folio" style="width: fit-content;">
@@ -23,16 +34,7 @@
                             <input class="form-control" type="text" name="Orden" placeholder="Orden de Producción" style="width: fit-content;">
                         </div>
 
-                        <div class="form-group">
-                            <select id="model" class="form-control" name="Operacion" onchange="location = this.value;">
-                            <option value="<%= acabados[0].operacion %>"  selected > <%= acabados[0].operacion %> </option>
-                            <% for (var i =0; i < oper.length; i++)  {     %>
-
-                                <option value="/enviarvariable/<%=oper[i].nombre %>"  >  <%= oper[i].nombre %> </option>
-
-                                <%  }  %>
-                        </select >
-                        </div>
+                        
 
 
 
@@ -93,6 +95,7 @@
                         <div class="flex4">
                             <button class="btn btn-primary" type="submit">
                                     Enviar
+                                    
                             </button>
 
                             <a class="btn btn-primary" type="submit" href="/inicio" style="margin-left: 10%;">
