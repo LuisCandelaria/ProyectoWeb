@@ -1,0 +1,71 @@
+<%- include ("./partials/_header") %>
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/inspeccionProceso">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled " href="/escuadradora/">Escuadradora</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="/enchapadora/">Enchapadora</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled " href="/taladro/">Taladro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled " href="/sacabocados/">Sacabocados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled " href="/armado1/">Armado1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled " href="/armado2/">Armado2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled " href="/armado3/">Armado3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled " href="/acabados/">Acabados</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <div class="flexx">
+
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="Folio" placeholder="Folio" style="width: fit-content;">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="date" name="Fecha" placeholder="Fecha" style="width: fit-content; ">
+                </div>
+                <div class="form-group">
+
+                    <select class="form-control" name="Unidad" style="width: fit-content;">
+            <option value="" disabled selected hidden>Hora</option>
+            <option value="8">8:00 AM</option>
+            <option value="10">10:00 AM</option>
+            <option value="10">12:00 AM</option>
+            <option value="10">2:00 PM</option>
+            <option value="10">4:00 PM</option>
+
+        </select>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="flex7" style="margin-top: 10px;margin-right: 18%;">
+
+
+        <a class="btn btn-primary" type="submit" href="/escuadradora/" style="margin-left: 10%;">
+        Siguiente
+    </a>
+
+    </div>
+
+    <%- include ("./partials/_footer") %>
