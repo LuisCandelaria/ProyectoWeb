@@ -16,12 +16,14 @@ const piezaModelos = require('../model/piezaModelos');
 const altaPNC = require('../model/AltaPnc');
 const inspeccion = require('../model/inspeccion_final');
 const bajaPNC = require('../model/BajaPnc');
-<<<<<<< HEAD
+
 const def_proceso = require('../model/defecto_proceso');
-=======
 const inspeccionProceso = require('../model/inspeccionProceso');
 
->>>>>>> 333e8545adc2d305a6dac6c582e649bfd9a61336
+
+const inspeccionProceso = require('../model/inspeccionProceso');
+
+
 
 
 
