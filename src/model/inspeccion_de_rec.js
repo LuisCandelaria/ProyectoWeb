@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const inspeccionSchema = Schema({
     folio: Number,
-    fecha: date,
+    fecha: Date,
     inspector: String,
     entrada: Number,
     OC: Number,

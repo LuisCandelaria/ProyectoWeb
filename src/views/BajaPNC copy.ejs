@@ -12,7 +12,7 @@
                         <div class="flex4">
                             <div class="form-group">
                                 <select class="form-control" name="Folio" onchange="location = this.value;" placeholder="Folio" style="width: fit-content;">
-                                <option value="" disabled selected hidden>Folio</option>
+                                <option value="" disabled selected hidden><%= altpnc2[0].folio %></option>
                                 <% for (var i =0; i < altpnc.length; i++)  {     %>
 
                                     <option value="/enviarFolio/<%=altpnc[i].folio %>">  <%= altpnc[i].folio %> </option>
@@ -23,21 +23,21 @@
                             </div>
 
                             <div class="form-group">
-                                <input class="form-control" type="text" name="Fecha" placeholder="Fecha" style="width: 290px; margin-left: 10%;" disabled>
+                                <input class="form-control" type="text" name="Fecha" placeholder="<%= altpnc2[0].Fecha %>" style="width: 290px; margin-left: 10%;" disabled>
                             </div>
 
                         </div>
 
                         <div class="form-group">
-                            <input class="form-control" type="text" name="Orden" placeholder="Orden" style="width: fit-content; " disabled>
+                            <input class="form-control" type="text" name="Orden" placeholder="<%= altpnc2[0].Orden %>" style="width: fit-content; " disabled>
                         </div>
 
                         <div class="form-group">
-                            <input class="form-control" type="text" name="ProcesoDefecto" placeholder="Proceso donde ocurrió el defecto" disabled>
+                            <input class="form-control" type="text" name="ProcesoDefecto" placeholder="<%= altpnc2[0].Operacion %>" disabled>
                         </div>
 
                         <div class="form-group">
-                            <input class="form-control" type="text" name="Modelo" placeholder="Modelo" disabled>
+                            <input class="form-control" type="text" name="Modelo" placeholder="<%= altpnc2[0].Modelo %>" disabled>
                         </div>
 
 
@@ -51,23 +51,25 @@
 
                            
                         <div class="form-group">
-                            <textarea class="form-control" name="Comentarios" cols="80" disabled></textarea>
+                            <textarea class="form-control" name="Comentarios" cols="80" disabled>
+                                      <%= altpnc2[0].Defectos %> 
+                            </textarea>
                         </div>
                         </div>
 
 
                         <div class="form-group">
-                            <input class="form-control" type="text" name="Cantidad"  placeholder="Cantidad" style="width: fit-content; " disabled>
+                            <input class="form-control" type="text" name="Cantidad"  placeholder="<%= altpnc2[0].Cantidad %>" style="width: fit-content; " disabled>
                         </div>
 
 
 
 
                         <div class="form-group">
-                            <textarea class="form-control" name="Comentarios" cols="80" placeholder="Comentarios" disabled></textarea>
+                            <textarea class="form-control" name="Comentarios" cols="80" placeholder="<%= altpnc2[0].Comentarios %>" disabled></textarea>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="Retrabajable"  placeholder="Retrabajable" style="width: fit-content; " disabled>
+                            <input class="form-control" type="text" name="Retrabajable"  placeholder="<%= altpnc2[0].Retrabajo %>" style="width: fit-content; " disabled>
                         </div>
                         <hr class="my-4">
 
@@ -90,10 +92,12 @@
                         <div class="form-group">
                             <select class="form-control" name="Retrabajable" placeholder="Retrabajable" style="width: fit-content;">
                             <option value="" disabled selected hidden>Tipo</option>
-                            <option value="Retrabajo">Costo de Retrabajo</option>
-                            <option value="Scrap">Costo de Scrap</option>
+                            <option value="Costo de Retrabajo">Costo de Retrabajo</option>
+                            <option value="Costo de Scrap">Costo de Scrap</option>
                         </select>
                         </div>
+
+                     
 
 
 
@@ -125,10 +129,43 @@
                         </div>
 
                     </form>
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                        <div id="myDropdown" class="dropdown-content">
+                          <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                          <a href="#about">About</a>
+                          <a href="#base">Base</a>
+                          <a href="#blog">Blog</a>
+                          <a href="#contact">Contact</a>
+                          <a href="#custom">Custom</a>
+                          <a href="#support">Support</a>
+                          <a href="#tools">Tools</a>
+                        </div>
+                      </div>
                 </div>
             </div>
         </div>
     </div>
     </div>
+<script>
+    function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
     <%- include ("./partials/_footer") %>
