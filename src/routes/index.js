@@ -36,10 +36,19 @@ const { Router } = require('express');
 
 // Nos regresaria las tareas guardadas en la BD
 router.get('/', (req, res) => {
+
     res.render('singin');
 });
 router.get('/inicio/', (req, res) => {
     res.render('Inicio');
+});
+
+router.get('/super/', (req, res) => {
+    res.render('Super');
+});
+
+router.get('/registrar/', (req, res) => {
+    res.render('registrar');
 });
 router.get('/recepcion/', async(req, res) => {;
     const prov = await provedor.find();
@@ -197,11 +206,13 @@ router.get('/bajaPNC/', async(req, res) => {
 router.post('/registrar', function(req, res) {
     var username = req.body.username;
     var password = req.body.password;
-
+    var type = req.body.type;
     var newuser = new usuarios();
 
     newuser.username = username;
     newuser.password = password;
+    newuser.type = type;
+
 
     newuser.save(function(err, savedUser) {
         if (err) {
@@ -217,7 +228,9 @@ router.post('/registrar', function(req, res) {
 router.post('/singin', function(req, res) {
     var username = req.body.username;
     var password = req.body.password;
-    usuarios.findOne({ username: username, password: password }, function(err, user) {
+    var type = req.body.type;
+
+    usuarios.findOne({ username: username, password: password, type: type }, function(err, user) {
         if (err) {
             console.log(err);
             return res.status(500).send();
@@ -225,13 +238,23 @@ router.post('/singin', function(req, res) {
 
         if (!user) {
             return res.status(404).send("<script>  window.alert('Usuario Invalido') </script>");
-
-
         }
 
-        return res.redirect('/inicio/');
+        console.log(type)
+
+        if (type == "SuperUsuario") {
+            return res.redirect('/Super/');
+
+        } else {
+            return res.redirect('/inicio/')
+        }
     })
 });
+
+
+
+
+
 // Ruta que nos permita agregar nuevas tareas que vienen desde un metodo post
 router.post('/add', async(req, res) => {
     const task = new provedor(req.body);
