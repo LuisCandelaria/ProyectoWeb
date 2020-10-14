@@ -29,8 +29,8 @@ const userSchema = new mongoose.Schema({
         type : String,
         require : true
     },
-    username : {
-        type : String,
+    superuser : {
+        type : Boolean,
         require : true
     }
 });

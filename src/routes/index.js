@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Task = require('../model/task');
 const provedor = require('../model/provedor');
-const usuarios = require('../model/usuarios');
+const { Users } = require('../model/usuarios');
 const materiales = require('../model/materiales');
 const departamentos = require('../model/departamentos');
 const operaciones = require('../model/operaciones');
@@ -28,6 +28,7 @@ const def_proceso = require('../model/defecto_proceso');
 const inspeccionProceso = require('../model/inspeccionProceso');
 const bodyParser = require( 'body-parser' );
 const jsonParser = bodyParser.json();
+const bcrypt = require( 'bcrypt-nodejs' );
 
 
 
@@ -207,7 +208,7 @@ router.get('/bajaPNC/', async(req, res) => {
 
 //Ruta para registrar
 router.post('/registrar', jsonParser, function(req, res) {
-    let {fName, lName, email, password} = req.body;
+    let {fName, lName, email, password, superuser} = req.body;
 
     if( !fName || !lName || !email || !password ){
         res.statusMessage = "Parameter missing in the body of the request.";
@@ -238,7 +239,8 @@ router.post('/registrar', jsonParser, function(req, res) {
                     fName, 
                     lName, 
                     password : hashedPassword, 
-                    email 
+                    email, 
+                    superuser
                 };
 
                 Users
@@ -282,7 +284,7 @@ router.post('/singin', jsonParser, function(req, res) {
                             let userData = {
                                 fName : user.fName,
                                 lName : user.lName,
-                                email : user.email
+                                superuser : user.superuser
                             };
 
                             jsonwebtoken.sign( userData, SECRET_TOKEN, { expiresIn : '25m' }, ( err, token ) => {
