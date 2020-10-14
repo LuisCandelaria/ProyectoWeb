@@ -24,7 +24,6 @@ function validate() {
 
 function userEmail( data ) {
     console.log( data );
-    window.location.href = "/inicio/";
 }
 
 function init() {

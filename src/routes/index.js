@@ -28,8 +28,9 @@ const def_proceso = require('../model/defecto_proceso');
 const inspeccionProceso = require('../model/inspeccionProceso');
 const bodyParser = require( 'body-parser' );
 const jsonParser = bodyParser.json();
-const bcrypt = require( 'bcrypt-nodejs' );
-
+const bcrypt = require( 'bcryptjs' );
+const jsonwebtoken = require( 'jsonwebtoken' );
+const { SECRET_TOKEN } = require( '../config/config' );
 
 
 
