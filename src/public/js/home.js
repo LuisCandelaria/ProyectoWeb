@@ -19,6 +19,7 @@ function validate() {
         })
         .catch( err => {
             console.log( err.message );
+            window.location.href = "/";
         });
 }
 

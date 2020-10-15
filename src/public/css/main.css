@@ -2,14 +2,12 @@
     background: darkslategrey;
     background: -webkit-linear-gradient(to right, silver, darkslategrey);
     background: linear-gradient(to right, silver, darkslategrey);
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .signup {
     background: darkslategrey;
     background: -webkit-linear-gradient(to right, silver, darkslategrey);
     background: linear-gradient(to right, silver, darkslategrey);
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .modal {
